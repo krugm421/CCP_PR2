@@ -130,7 +130,7 @@ long LinuxParser::Jiffies() {
   vector<long int> jiffie_vector = LinuxParser::JiffieHelper();
 
   long sum = 0;
-  for(jiffie : jiffie_vector){
+  for(long jiffie : jiffie_vector){
     sum += jiffie;
   }
   return sum; 
@@ -227,12 +227,12 @@ string LinuxParser::Ram(int pid) {
   }
 
 // DONE: Read and return the user ID associated with a process
-string LinuxParser::Uid(int pid[[maybe_unused]]) { 
+string LinuxParser::Uid(int pid) { 
   return KeyValueHelper("Uid:", kProcDirectory + to_string(pid) + kStatusFilename);
 }
 
 // DONE: Read and return the user associated with a process
-string LinuxParser::User(int pid[[maybe_unused]]) {
+string LinuxParser::User(int pid) {
   string line;
   string user, x, uid;
   string uid_parser{LinuxParser::Uid(pid)};
