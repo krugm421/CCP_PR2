@@ -91,15 +91,14 @@ float LinuxParser::MemoryUtilization() {
 
 // DONE: Read and return the system uptime
 long LinuxParser::UpTime() { 
-  long int uptime, idletime;
-  string line;
+  string line, uptime, idletime;
   std::ifstream stream(kProcDirectory + kUptimeFilename);
   if(stream.is_open()){
     std::getline(stream, line);
     std::istringstream linestream(line);
     linestream >> uptime >> idletime;
   }
-  return uptime;
+  return stoi(uptime);
 }
 
 // This helper function parese all jiffies
