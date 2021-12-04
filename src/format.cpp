@@ -17,8 +17,6 @@ string Format::ElapsedTime(long seconds) {
     long full_minutes = (long)((seconds % 3600) / 60);
     long full_seconds = (long)((seconds % 3600) % 60);
 
-
-<<<<<<< HEAD
     string full_hours_str = std::to_string(full_hours);
     string full_minutes_str = std::to_string(full_minutes);
     string full_seconds_str = std::to_string(full_seconds);
@@ -26,16 +24,5 @@ string Format::ElapsedTime(long seconds) {
                 string(2 - full_minutes_str.length(), '0') + full_minutes_str + ':' +
                 string(2 - full_seconds_str.length(), '0') + full_seconds_str;
 
-=======
-    string hours_str = std::to_string(full_hours);
-    string minutes_str = std::to_string(full_minutes);
-    string seconds_str = std::to_string(full_seconds);
-    string time = string(2 - hours_str.length(), '0') + hours_str + ':' +
-                string(2 - minutes_str.length(), '0') + minutes_str + ':' +
-                string(2 - seconds_str.length(), '0') + seconds_str;
-
-    // return to_string(full_hours) + ":" + to_string(full_minutes) + ":" + to_string(full_seconds) + " :: " + to_string(seconds);
->>>>>>> 532804c06398192a56cda1d71efb8da53c0ad1f2
     return time;
 }
-
