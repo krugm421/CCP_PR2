@@ -17,7 +17,6 @@ string Format::ElapsedTime(long seconds) {
     long full_minutes = (long)((seconds % 3600) / 60);
     long full_seconds = (long)((seconds % 3600) % 60);
 
-
     string full_hours_str = std::to_string(full_hours);
     string full_minutes_str = std::to_string(full_minutes);
     string full_seconds_str = std::to_string(full_seconds);
@@ -27,4 +26,3 @@ string Format::ElapsedTime(long seconds) {
 
     return time;
 }
-
